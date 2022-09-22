@@ -16,6 +16,7 @@ class CommitVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Commit Monitor"
+        tableView.addShadow(color: .darkGray, offSet: CGSize(width: 3, height: 5))
         
     }
 }
@@ -26,7 +27,7 @@ extension CommitVC: UITableViewDataSource, UITableViewDelegate {
         return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell", for: indexPath) as! CommitCell

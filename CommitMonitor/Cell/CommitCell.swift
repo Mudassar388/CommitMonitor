@@ -8,7 +8,7 @@
 import UIKit
 
 class CommitCell: UITableViewCell {
- // MARK: -
+ // MARK: - Outlets
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lblRepoName: UILabel!
     @IBOutlet weak var lblCommit_1: UILabel!
@@ -17,14 +17,21 @@ class CommitCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .lightGray.withAlphaComponent(0.6)
-        self.layer.borderWidth = 10
+        configureCell()
+        configureAvatar()
+    }
+    
+    func configureCell() {
+        self.backgroundColor = .lightGray.withAlphaComponent(0.7)
+        self.layer.borderWidth = 12
         self.layer.borderColor = UIColor.systemBackground.cgColor
-        self.imgAvatar.backgroundColor = .gray
+    }
+    
+    func configureAvatar() {
+        self.imgAvatar.backgroundColor = .systemBackground
         self.imgAvatar.layer.cornerRadius = self.layer.frame.height/2
         self.imgAvatar.layer.borderWidth = 1
         self.imgAvatar.layer.masksToBounds = true
-        self.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
